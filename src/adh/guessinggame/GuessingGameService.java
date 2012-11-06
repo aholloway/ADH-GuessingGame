@@ -22,12 +22,6 @@ public class GuessingGameService {
     }
     
     public Feedback testGuess(int guess){
-        
-      
-        
-        
-        
-        
         if (guess<correctNumber){
             // guess was too low, return -1
             return Feedback.TOO_LOW;

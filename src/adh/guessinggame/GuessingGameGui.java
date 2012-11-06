@@ -22,12 +22,12 @@ public class GuessingGameGui extends javax.swing.JFrame {
     public GuessingGameGui() {
         super("Guessing Game");
         initComponents();
-        jLabel1.setText("Guess the number I am thinking of between "
+        guessNumberLabel.setText("Guess the number I am thinking of between "
                 + MIN_GUESS + " and " + MAX_GUESS + ".");
         gs = new GuessingGameService(MIN_GUESS, MAX_GUESS);
         gs.setCorrectNumber();
-        jButton2.setVisible(false);
-        jButton3.setVisible(false);
+        playAgainButton.setVisible(false);
+        quitButton.setVisible(false);
         this.setLocationRelativeTo(null);
         setVisible(true);
 
@@ -42,85 +42,85 @@ public class GuessingGameGui extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        guessingGamePanel = new javax.swing.JPanel();
+        guessButton = new javax.swing.JButton();
+        guessTextField = new javax.swing.JTextField();
+        guessNumberLabel = new javax.swing.JLabel();
+        yourGuessLabel = new javax.swing.JLabel();
+        outputLabel = new javax.swing.JLabel();
+        playAgainButton = new javax.swing.JButton();
+        quitButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Guess");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        guessButton.setText("Guess");
+        guessButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        guessButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                guessButtonActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Guess the number I am thinking of between X and Y.");
+        guessNumberLabel.setText("Guess the number I am thinking of between X and Y.");
 
-        jLabel2.setText("Your Guess:");
+        yourGuessLabel.setText("Your Guess:");
 
-        jButton2.setText("Play Again");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        playAgainButton.setText("Play Again");
+        playAgainButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                playAgainButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Quit");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        quitButton.setText("Quit");
+        quitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                quitButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout guessingGamePanelLayout = new javax.swing.GroupLayout(guessingGamePanel);
+        guessingGamePanel.setLayout(guessingGamePanelLayout);
+        guessingGamePanelLayout.setHorizontalGroup(
+            guessingGamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(guessingGamePanelLayout.createSequentialGroup()
+                .addGroup(guessingGamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(guessingGamePanelLayout.createSequentialGroup()
                         .addGap(114, 114, 114)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(guessButton))
+                    .addGroup(guessingGamePanelLayout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(guessingGamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(guessingGamePanelLayout.createSequentialGroup()
+                                .addComponent(yourGuessLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(guessTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(guessNumberLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(outputLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(guessingGamePanelLayout.createSequentialGroup()
                         .addGap(82, 82, 82)
-                        .addComponent(jButton2)
+                        .addComponent(playAgainButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)))
+                        .addComponent(quitButton)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        guessingGamePanelLayout.setVerticalGroup(
+            guessingGamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(guessingGamePanelLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(guessNumberLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                .addGroup(guessingGamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(guessTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(yourGuessLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(guessButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(outputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                .addGroup(guessingGamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(playAgainButton)
+                    .addComponent(quitButton))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
@@ -130,53 +130,42 @@ public class GuessingGameGui extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(guessingGamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(62, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(24, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(guessingGamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String s = jTextField1.getText();
+    private void guessButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guessButtonActionPerformed
+        String s = guessTextField.getText();
         //verify that the text is an int
         try {
             int i = Integer.parseInt(s);
             Feedback result = gs.testGuess(i);
             switch (result) {
                 case TOO_HIGH:
-                    jLabel3.setText("Your guess is too high!");
+                    outputLabel.setText("Your guess is too high!");
                     break;
                 case TOO_LOW:
-                    jLabel3.setText("Your guess is too low!");
+                    outputLabel.setText("Your guess is too low!");
                     break;
                 case CORRECT:
-                    jLabel3.setText("Congratulations, you have guessed the correct"
+                    outputLabel.setText("Congratulations, you have guessed the correct"
                             + " number!!!");
-                    jButton1.setVisible(false);
-                    jButton2.setVisible(true);
-                    jButton3.setVisible(true);
+                    guessButton.setVisible(false);
+                    playAgainButton.setVisible(true);
+                    quitButton.setVisible(true);
                     break;
             }
 
-//            if (result == -1) {
-//                jLabel3.setText("Your guess is too low!");
-//            } else if (result == 1) {
-//                jLabel3.setText("Your guess is too high!");
-//            } else {
-//                jLabel3.setText("Congratulations, you have guessed the correct"
-//                        + " number!!!");
-//                jButton1.setVisible(false);
-//                jButton2.setVisible(true);
-//                jButton3.setVisible(true);
-//            }
             //the following line was helpful for debugging
             System.out.println("Correct Num: " + gs.getCorrectNumber());
 
@@ -185,28 +174,28 @@ public class GuessingGameGui extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "The guess must be numerical",
                     "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_guessButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void playAgainButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playAgainButtonActionPerformed
         gs.setCorrectNumber();
-        jTextField1.setText("");
-        jLabel3.setText("");
-        jButton1.setVisible(true);
-        jButton2.setVisible(false);
-        jButton3.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+        guessTextField.setText("");
+        outputLabel.setText("");
+        guessButton.setVisible(true);
+        playAgainButton.setVisible(false);
+        quitButton.setVisible(false);
+    }//GEN-LAST:event_playAgainButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_quitButtonActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton guessButton;
+    private javax.swing.JLabel guessNumberLabel;
+    private javax.swing.JTextField guessTextField;
+    private javax.swing.JPanel guessingGamePanel;
+    private javax.swing.JLabel outputLabel;
+    private javax.swing.JButton playAgainButton;
+    private javax.swing.JButton quitButton;
+    private javax.swing.JLabel yourGuessLabel;
     // End of variables declaration//GEN-END:variables
 }
