@@ -23,11 +23,12 @@ public class GuessingGameGui extends javax.swing.JFrame {
         super("Guessing Game");
         initComponents();
         jLabel1.setText("Guess the number I am thinking of between "
-                +MIN_GUESS+  " and " + MAX_GUESS+".");
-        gs = new GuessingGameService(MIN_GUESS,MAX_GUESS);
+                + MIN_GUESS + " and " + MAX_GUESS + ".");
+        gs = new GuessingGameService(MIN_GUESS, MAX_GUESS);
         gs.setCorrectNumber();
         jButton2.setVisible(false);
         jButton3.setVisible(false);
+        this.setLocationRelativeTo(null);
         setVisible(true);
 
     }
@@ -60,7 +61,7 @@ public class GuessingGameGui extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Guess the number I am thinking of between N and 1,000,000.");
+        jLabel1.setText("Guess the number I am thinking of between X and Y.");
 
         jLabel2.setText("Your Guess:");
 
@@ -130,7 +131,7 @@ public class GuessingGameGui extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,20 +149,36 @@ public class GuessingGameGui extends javax.swing.JFrame {
         //verify that the text is an int
         try {
             int i = Integer.parseInt(s);
-            int result = gs.testGuess(i);
-            if (result == -1) {
-                jLabel3.setText("Your guess is too low!");
-            } else if (result == 1) {
-                jLabel3.setText("Your guess is too high!");
-            } else {
-                jLabel3.setText("Congratulations, you have guessed the correct"
-                        + " number!!!");
-                jButton1.setVisible(false);
-                jButton2.setVisible(true);
-                jButton3.setVisible(true);
+            Feedback result = gs.testGuess(i);
+            switch (result) {
+                case TOO_HIGH:
+                    jLabel3.setText("Your guess is too high!");
+                    break;
+                case TOO_LOW:
+                    jLabel3.setText("Your guess is too low!");
+                    break;
+                case CORRECT:
+                    jLabel3.setText("Congratulations, you have guessed the correct"
+                            + " number!!!");
+                    jButton1.setVisible(false);
+                    jButton2.setVisible(true);
+                    jButton3.setVisible(true);
+                    break;
             }
+
+//            if (result == -1) {
+//                jLabel3.setText("Your guess is too low!");
+//            } else if (result == 1) {
+//                jLabel3.setText("Your guess is too high!");
+//            } else {
+//                jLabel3.setText("Congratulations, you have guessed the correct"
+//                        + " number!!!");
+//                jButton1.setVisible(false);
+//                jButton2.setVisible(true);
+//                jButton3.setVisible(true);
+//            }
             //the following line was helpful for debugging
-            //System.out.println("Correct Num: " + gs.getCorrectNumber());
+            System.out.println("Correct Num: " + gs.getCorrectNumber());
 
         } catch (Exception e) {
             //message box warning that the guess must be numerical.
@@ -182,7 +199,6 @@ public class GuessingGameGui extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton3ActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

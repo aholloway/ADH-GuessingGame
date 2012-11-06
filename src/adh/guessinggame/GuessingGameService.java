@@ -21,16 +21,22 @@ public class GuessingGameService {
         correctNumber=generator.nextInt(maxGuess-minGuess+1)+minGuess;
     }
     
-    public int testGuess(int guess){
+    public Feedback testGuess(int guess){
+        
+      
+        
+        
+        
+        
         if (guess<correctNumber){
             // guess was too low, return -1
-            return -1;
+            return Feedback.TOO_LOW;
         } else if (guess>correctNumber){
             // guess was too high, return 1
-            return 1;
+            return Feedback.TOO_HIGH;
         } else {
             // guess was correct, return 0
-            return 0;
+            return Feedback.CORRECT;
         }
     }
         
